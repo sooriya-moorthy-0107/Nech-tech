@@ -4,7 +4,7 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { ParticleBackground } from './components/ParticleBackground';
 import { Chatbot } from './components/Chatbot';
-import { 
+import {
   Sun, Moon, Menu, X, ChevronRight, MessageCircle, Shield, Users, Award
 } from 'lucide-react';
 
@@ -29,14 +29,14 @@ const Navbar: React.FC = () => {
       borderRadius: '16px'
     }}>
       <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'var(--text-primary)' }}>
-        <img 
-          src="/images/logo.png" 
-          alt="Nech Technology Logo" 
+        <img
+          src="/images/logo.png"
+          alt="Nech Technology Logo"
           style={{
             height: '42px',
             borderRadius: '6px',
             objectFit: 'contain'
-          }} 
+          }}
         />
         <span style={{ fontWeight: 800, fontSize: '20px', fontFamily: 'var(--font-heading)' }}>
           Nech <span style={{ color: 'var(--accent-cyan)' }}>Technology</span>
@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         {/* Language selector */}
-        <select 
-          value={language} 
+        <select
+          value={language}
           onChange={(e) => setLanguage(e.target.value as any)}
           style={{
             padding: '6px 10px',
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
         </select>
 
         {/* Theme Toggle */}
-        <button 
+        <button
           onClick={toggleTheme}
           style={{
             background: 'none',
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
         </button>
 
         {/* Mobile menu trigger */}
-        <button 
+        <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="mobile-menu-trigger"
           style={{
@@ -222,7 +222,7 @@ const Home: React.FC = () => {
             {t('heroSubtitle')}
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '32px', flexWrap: 'wrap' }}>
-            <button 
+            <button
               onClick={() => navigate('/contact?type=quote')}
               style={{
                 padding: '14px 28px',
@@ -237,7 +237,7 @@ const Home: React.FC = () => {
             >
               {t('ctaQuote')}
             </button>
-            <button 
+            <button
               onClick={() => navigate('/contact?type=consultation')}
               style={{
                 padding: '14px 28px',
@@ -303,7 +303,7 @@ const Home: React.FC = () => {
       <section style={{ padding: '60px 0', textAlign: 'center' }}>
         <h2 style={{ marginBottom: '40px', fontSize: '32px' }}>{t('techStackTitle')}</h2>
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {['Website Development', 'Software Development', 'Cloud Computing', 'Mobile Application Development', 'E-Commerce Development', 'Custom Software Development', 'CRM & ERP Development', 'UI / UX Design', 'Shopify Development', 'WooCommerce Development', 'WordPress Development'].map(tech => (
+          {['Website Development', 'Software Development', 'Cloud Computing', 'Mobile Application Development', 'E-Commerce Development', 'Custom Software Development', 'CRM & ERP Development', 'UI / UX Design', 'Shopify Development', 'Commerce Development', 'WordPress Development'].map(tech => (
             <div key={tech} className="glassmorphism" style={{
               padding: '12px 24px',
               borderRadius: '30px',
@@ -435,7 +435,7 @@ const Portfolio: React.FC = () => {
   return (
     <div style={{ maxWidth: '1000px', margin: '40px auto', padding: '0 24px' }} className="fade-in-up">
       <h1 style={{ fontSize: '36px', marginBottom: '24px', textAlign: 'center' }}>Featured Portfolio</h1>
-      
+
       {/* Filters */}
       <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', marginBottom: '32px' }}>
         {['All', 'EdTech', 'Healthcare', 'SaaS'].map(cat => (
@@ -493,7 +493,7 @@ const Portfolio: React.FC = () => {
             borderRadius: '20px',
             position: 'relative'
           }}>
-            <button 
+            <button
               onClick={() => setSelectedProject(null)}
               style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer' }}
             >
@@ -563,7 +563,7 @@ const Careers: React.FC = () => {
   return (
     <div style={{ maxWidth: '800px', margin: '40px auto', padding: '0 24px' }} className="fade-in-up">
       <h1 style={{ fontSize: '36px', marginBottom: '24px', textAlign: 'center' }}>Careers at Nech Technology</h1>
-      
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         {jobs.map(j => (
           <div key={j.id} className="glassmorphism" style={{ padding: '24px', borderRadius: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
@@ -572,7 +572,7 @@ const Careers: React.FC = () => {
               <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{j.department} • {j.location} • {j.type}</span>
               <p style={{ color: 'var(--text-secondary)', marginTop: '8px', fontSize: '14px' }}>{j.description}</p>
             </div>
-            <button 
+            <button
               onClick={() => setSelectedJob(j)}
               style={{
                 padding: '10px 20px',
@@ -615,7 +615,7 @@ const Careers: React.FC = () => {
             gap: '16px',
             position: 'relative'
           }}>
-            <button 
+            <button
               type="button"
               onClick={() => setSelectedJob(null)}
               style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: 'var(--text-primary)', cursor: 'pointer' }}
@@ -626,40 +626,40 @@ const Careers: React.FC = () => {
 
             <div>
               <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Full Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 required
                 value={formData.name}
-                onChange={e => setFormData({...formData, name: e.target.value})}
+                onChange={e => setFormData({ ...formData, name: e.target.value })}
                 style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
               />
             </div>
 
             <div>
               <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Email Address</label>
-              <input 
-                type="email" 
+              <input
+                type="email"
                 required
                 value={formData.email}
-                onChange={e => setFormData({...formData, email: e.target.value})}
+                onChange={e => setFormData({ ...formData, email: e.target.value })}
                 style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
               />
             </div>
 
             <div>
               <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Cover Letter</label>
-              <textarea 
+              <textarea
                 rows={3}
                 value={formData.coverLetter}
-                onChange={e => setFormData({...formData, coverLetter: e.target.value})}
+                onChange={e => setFormData({ ...formData, coverLetter: e.target.value })}
                 style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
               />
             </div>
 
             <div>
               <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Resume (PDF/DOCX, Max 5MB)</label>
-              <input 
-                type="file" 
+              <input
+                type="file"
                 required
                 accept=".pdf,.docx"
                 onChange={e => setFile(e.target.files?.[0] || null)}
@@ -669,7 +669,7 @@ const Careers: React.FC = () => {
 
             {msg && <div style={{ color: msg.includes('success') ? '#22c55e' : '#ef4444', fontSize: '14px' }}>{msg}</div>}
 
-            <button 
+            <button
               type="submit"
               style={{
                 padding: '12px',
@@ -704,7 +704,7 @@ const Blog: React.FC = () => {
   return (
     <div style={{ maxWidth: '800px', margin: '40px auto', padding: '0 24px' }} className="fade-in-up">
       <h1 style={{ fontSize: '36px', marginBottom: '32px', textAlign: 'center' }}>Nech Editorial Blog</h1>
-      
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
         {posts.map(p => (
           <article key={p.id} className="glassmorphism" style={{ padding: '32px', borderRadius: '16px' }}>
@@ -725,9 +725,9 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const endpoint = formState.type === 'Inquiry' ? ((import.meta.env.VITE_API_URL || '') + '/api/contact') : ((import.meta.env.VITE_API_URL || '') + '/api/quote-request');
-    const bodyData = formState.type === 'Inquiry' 
+    const bodyData = formState.type === 'Inquiry'
       ? { name: formState.name, email: formState.email, message: formState.message }
       : { name: formState.name, email: formState.email, company: formState.company, message: formState.message, bookingType: formState.type };
 
@@ -778,7 +778,7 @@ const Contact: React.FC = () => {
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>I want to...</label>
             <select
               value={formState.type}
-              onChange={e => setFormState({...formState, type: e.target.value})}
+              onChange={e => setFormState({ ...formState, type: e.target.value })}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)', outline: 'none' }}
             >
               <option value="Quote">Get a Project Quote</option>
@@ -790,22 +790,22 @@ const Contact: React.FC = () => {
 
           <div>
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Name</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               required
               value={formState.name}
-              onChange={e => setFormState({...formState, name: e.target.value})}
+              onChange={e => setFormState({ ...formState, name: e.target.value })}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
             />
           </div>
 
           <div>
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Email</label>
-            <input 
-              type="email" 
+            <input
+              type="email"
               required
               value={formState.email}
-              onChange={e => setFormState({...formState, email: e.target.value})}
+              onChange={e => setFormState({ ...formState, email: e.target.value })}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
             />
           </div>
@@ -813,10 +813,10 @@ const Contact: React.FC = () => {
           {formState.type !== 'Inquiry' && (
             <div>
               <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Company Name</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={formState.company}
-                onChange={e => setFormState({...formState, company: e.target.value})}
+                onChange={e => setFormState({ ...formState, company: e.target.value })}
                 style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
               />
             </div>
@@ -824,18 +824,18 @@ const Contact: React.FC = () => {
 
           <div>
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Message details</label>
-            <textarea 
+            <textarea
               rows={4}
               required
               value={formState.message}
-              onChange={e => setFormState({...formState, message: e.target.value})}
+              onChange={e => setFormState({ ...formState, message: e.target.value })}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
             />
           </div>
 
           {msg && <div style={{ color: '#22c55e', fontSize: '14px' }}>{msg}</div>}
 
-          <button 
+          <button
             type="submit"
             style={{
               padding: '12px',
@@ -861,7 +861,7 @@ const AdminPanel: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  
+
   // Dashboard states
   const [analytics, setAnalytics] = useState<any | null>(null);
   const [selectedModule, setSelectedModule] = useState<'Services' | 'Projects' | 'Careers' | 'Blogs'>('Services');
@@ -981,8 +981,8 @@ const AdminPanel: React.FC = () => {
           {errMsg && <div style={{ color: '#ef4444', fontSize: '14px' }}>{errMsg}</div>}
           <div>
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Username</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               required
               value={username}
               onChange={e => setUsername(e.target.value)}
@@ -991,15 +991,15 @@ const AdminPanel: React.FC = () => {
           </div>
           <div>
             <label style={{ fontSize: '14px', display: 'block', marginBottom: '6px' }}>Password</label>
-            <input 
-              type="password" 
+            <input
+              type="password"
               required
               value={password}
               onChange={e => setPassword(e.target.value)}
               style={{ width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
             />
           </div>
-          <button 
+          <button
             type="submit"
             style={{
               padding: '12px',
@@ -1022,7 +1022,7 @@ const AdminPanel: React.FC = () => {
     <div style={{ maxWidth: '1200px', margin: '40px auto', padding: '0 24px' }} className="fade-in-up">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
         <h1>Admin Control Dashboard</h1>
-        <button 
+        <button
           onClick={handleLogout}
           style={{ padding: '8px 16px', borderRadius: '8px', border: 'none', background: '#ef4444', color: '#fff', cursor: 'pointer', fontWeight: 600 }}
         >
@@ -1080,18 +1080,18 @@ const AdminPanel: React.FC = () => {
             <div>
               <h3>Add New Service</h3>
               <form onSubmit={addService} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
-                <input 
-                  placeholder="Service Title" 
+                <input
+                  placeholder="Service Title"
                   required
                   value={serviceForm.title}
-                  onChange={e => setServiceForm({...serviceForm, title: e.target.value})}
+                  onChange={e => setServiceForm({ ...serviceForm, title: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
-                <textarea 
-                  placeholder="Service Description" 
+                <textarea
+                  placeholder="Service Description"
                   required
                   value={serviceForm.description}
-                  onChange={e => setServiceForm({...serviceForm, description: e.target.value})}
+                  onChange={e => setServiceForm({ ...serviceForm, description: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
                 <button type="submit" style={{ padding: '10px', borderRadius: '8px', border: 'none', background: 'var(--accent-cyan)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>Create Service</button>
@@ -1103,24 +1103,24 @@ const AdminPanel: React.FC = () => {
             <div>
               <h3>Add New Project</h3>
               <form onSubmit={addProject} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
-                <input 
-                  placeholder="Project Title" 
+                <input
+                  placeholder="Project Title"
                   required
                   value={projectForm.title}
-                  onChange={e => setProjectForm({...projectForm, title: e.target.value})}
+                  onChange={e => setProjectForm({ ...projectForm, title: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
-                <textarea 
-                  placeholder="Project Description" 
+                <textarea
+                  placeholder="Project Description"
                   required
                   value={projectForm.description}
-                  onChange={e => setProjectForm({...projectForm, description: e.target.value})}
+                  onChange={e => setProjectForm({ ...projectForm, description: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
-                <input 
-                  placeholder="Client Name" 
+                <input
+                  placeholder="Client Name"
                   value={projectForm.client}
-                  onChange={e => setProjectForm({...projectForm, client: e.target.value})}
+                  onChange={e => setProjectForm({ ...projectForm, client: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
                 <button type="submit" style={{ padding: '10px', borderRadius: '8px', border: 'none', background: 'var(--accent-cyan)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>Create Project</button>
@@ -1132,18 +1132,18 @@ const AdminPanel: React.FC = () => {
             <div>
               <h3>Add New Career Listing</h3>
               <form onSubmit={addCareer} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
-                <input 
-                  placeholder="Job Title" 
+                <input
+                  placeholder="Job Title"
                   required
                   value={careerForm.title}
-                  onChange={e => setCareerForm({...careerForm, title: e.target.value})}
+                  onChange={e => setCareerForm({ ...careerForm, title: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
-                <textarea 
-                  placeholder="Job Description" 
+                <textarea
+                  placeholder="Job Description"
                   required
                   value={careerForm.description}
-                  onChange={e => setCareerForm({...careerForm, description: e.target.value})}
+                  onChange={e => setCareerForm({ ...careerForm, description: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
                 <button type="submit" style={{ padding: '10px', borderRadius: '8px', border: 'none', background: 'var(--accent-cyan)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>Post Career</button>
@@ -1155,18 +1155,18 @@ const AdminPanel: React.FC = () => {
             <div>
               <h3>Write Blog Article</h3>
               <form onSubmit={addBlog} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
-                <input 
-                  placeholder="Article Title" 
+                <input
+                  placeholder="Article Title"
                   required
                   value={blogForm.title}
-                  onChange={e => setBlogForm({...blogForm, title: e.target.value})}
+                  onChange={e => setBlogForm({ ...blogForm, title: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
-                <textarea 
-                  placeholder="Article Content" 
+                <textarea
+                  placeholder="Article Content"
                   required
                   value={blogForm.content}
-                  onChange={e => setBlogForm({...blogForm, content: e.target.value})}
+                  onChange={e => setBlogForm({ ...blogForm, content: e.target.value })}
                   style={{ padding: '10px', borderRadius: '8px', border: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.05)', color: 'var(--text-primary)' }}
                 />
                 <button type="submit" style={{ padding: '10px', borderRadius: '8px', border: 'none', background: 'var(--accent-cyan)', color: '#fff', cursor: 'pointer', fontWeight: 600 }}>Publish Post</button>
