@@ -185,13 +185,13 @@ app.post('/api/admin/login', (req: Request, res: Response) => {
   });
 
   // Set httpOnly secure cookie
-  res.setHeader('Set-Cookie', `admin-token=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=28800`);
+  res.setHeader('Set-Cookie', `admin-token=${token}; Path=/; HttpOnly; SameSite=None; Secure; Max-Age=28800`);
   res.json({ success: true, token, username: admin.username });
 });
 
 // Admin Logout
 app.post('/api/admin/logout', (req: Request, res: Response) => {
-  res.setHeader('Set-Cookie', 'admin-token=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0');
+  res.setHeader('Set-Cookie', 'admin-token=; Path=/; HttpOnly; SameSite=None; Secure; Max-Age=0');
   res.json({ success: true });
 });
 

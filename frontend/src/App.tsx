@@ -874,7 +874,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/analytics');
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/analytics', { credentials: 'include' });
       if (res.ok) {
         const data = await res.json();
         setAnalytics(data);
@@ -888,7 +888,7 @@ const AdminPanel: React.FC = () => {
 
   const checkAuth = async () => {
     try {
-      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/verify');
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/verify', { credentials: 'include' });
       if (res.ok) {
         setAuth(true);
         fetchAnalytics();
@@ -906,6 +906,7 @@ const AdminPanel: React.FC = () => {
     e.preventDefault();
     try {
       const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/login', {
+      credentials: 'include',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -924,7 +925,8 @@ const AdminPanel: React.FC = () => {
   };
 
   const handleLogout = async () => {
-    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/logout', { method: 'POST' });
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/logout', {
+      credentials: 'include', method: 'POST' });
     setAuth(false);
   };
 
@@ -932,6 +934,7 @@ const AdminPanel: React.FC = () => {
   const addService = async (e: React.FormEvent) => {
     e.preventDefault();
     await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/services', {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(serviceForm)
@@ -943,6 +946,7 @@ const AdminPanel: React.FC = () => {
   const addProject = async (e: React.FormEvent) => {
     e.preventDefault();
     await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/projects', {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(projectForm)
@@ -954,6 +958,7 @@ const AdminPanel: React.FC = () => {
   const addCareer = async (e: React.FormEvent) => {
     e.preventDefault();
     await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/careers', {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(careerForm)
@@ -965,6 +970,7 @@ const AdminPanel: React.FC = () => {
   const addBlog = async (e: React.FormEvent) => {
     e.preventDefault();
     await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/blog', {
+      credentials: 'include',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blogForm)
