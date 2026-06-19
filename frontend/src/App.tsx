@@ -376,7 +376,7 @@ const About: React.FC = () => {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
           <div className="glassmorphism" style={{ padding: '20px', textAlign: 'center' }}>
             <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'var(--accent-cyan)', margin: '0 auto 16px auto', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '24px', fontWeight: 700 }}>NS</div>
-            <h4>NallaSivam.</h4>
+            <h4>NallaSivam N.</h4>
             <span style={{ color: 'var(--accent-cyan)', fontSize: '14px' }}>Chief Executive Officer</span>
           </div>
           <div className="glassmorphism" style={{ padding: '20px', textAlign: 'center' }}>
