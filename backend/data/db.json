@@ -1,0 +1,111 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Custom Software Development",
+      "description": "Tailored software solutions designed to fit your business requirements and scale efficiently.",
+      "category": "Development",
+      "icon": "Cpu"
+    },
+    {
+      "id": 2,
+      "title": "Mobile App Development",
+      "description": "High-performance native and cross-platform mobile apps for iOS and Android platforms.",
+      "category": "Development",
+      "icon": "Smartphone"
+    },
+    {
+      "id": 3,
+      "title": "Cloud Integration & DevOps",
+      "description": "Modern cloud infrastructure architecture, migration, and automation utilizing AWS and Docker.",
+      "category": "Cloud",
+      "icon": "Cloud"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "School Management System",
+      "description": "A comprehensive ERP system for schools facilitating student profiles, grading, fees, and communication.",
+      "category": "EdTech",
+      "image": "/images/school.jpg",
+      "client": "Nech Academy"
+    },
+    {
+      "id": 2,
+      "title": "Hospital Management System",
+      "description": "A digital healthcare workspace for patient registration, doctor schedules, billing, and lab reports.",
+      "category": "Healthcare",
+      "image": "/images/hospital.jpg",
+      "client": "Care Health"
+    },
+    {
+      "id": 3,
+      "title": "E-Commerce Platform",
+      "description": "Highly scalable, glassmorphic e-commerce storefront with admin panel, cart, and payment integrations.",
+      "category": "SaaS",
+      "image": "/images/ecommerce.jpg",
+      "client": "SwiftShop"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "Nech Academy",
+      "logo": "/logos/academy.png"
+    },
+    {
+      "id": 2,
+      "name": "Care Health",
+      "logo": "/logos/carehealth.png"
+    },
+    {
+      "id": 3,
+      "name": "SwiftShop",
+      "logo": "/logos/swiftshop.png"
+    }
+  ],
+  "careers": [
+    {
+      "id": 1,
+      "title": "Frontend Developer (React)",
+      "department": "Engineering",
+      "location": "Remote / Chennai",
+      "type": "Full-time",
+      "description": "Looking for a skilled frontend engineer proficient in React, TS, and CSS transitions."
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer (Node.js)",
+      "department": "Engineering",
+      "location": "Remote",
+      "type": "Full-time",
+      "description": "Seeking a Node.js specialist to design scalable APIs and manage database operations."
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Why Startups Choose React + Node.js in 2026",
+      "content": "In today's fast-paced tech landscape, startups require tools that facilitate rapid prototyping and clean scalability...",
+      "author": "Nech Editorial",
+      "date": "2026-06-15"
+    },
+    {
+      "id": 2,
+      "title": "Transitioning to a Secure DevSecOps Workflow",
+      "content": "Security is no longer an afterthought. Implementing static scans, secure uploads, and role authorization is vital...",
+      "author": "Security Team",
+      "date": "2026-06-10"
+    }
+  ],
+  "contactRequests": [],
+  "quoteRequests": [],
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "passwordHash": "$2a$10$gK7c5NKSxLZR99sZXfiqx.pzCwnEatqR.LZgIjquCPFqSDvDumha."
+    }
+  ]
+}

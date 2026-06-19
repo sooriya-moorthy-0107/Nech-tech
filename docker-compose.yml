@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: nech_db
+    restart: always
+    environment:
+      POSTGRES_USER: nech_user
+      POSTGRES_PASSWORD: nech_password_secure_2026
+      POSTGRES_DB: nech_technology_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: nech_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - DATABASE_URL=postgres://nech_user:nech_password_secure_2026@db:5432/nech_technology_db
+      - NODE_ENV=production
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: nech_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
