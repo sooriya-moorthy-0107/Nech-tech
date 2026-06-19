@@ -303,7 +303,7 @@ const Home: React.FC = () => {
       <section style={{ padding: '60px 0', textAlign: 'center' }}>
         <h2 style={{ marginBottom: '40px', fontSize: '32px' }}>{t('techStackTitle')}</h2>
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {['React.js', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'AWS', 'Docker', 'PHP', 'Laravel', 'MongoDB', 'React Native', 'Next.js', 'Python', 'Django', 'SQL Server', 'MySQL', 'Bootstrap', 'Java', 'Go', 'Server Development', 'API Development'].map(tech => (
+          {['Website Development', 'Software Development', 'Cloud Computing', 'Mobile Application Development', 'E-Commerce Development', 'Custom Software Development', 'CRM & ERP Development', 'UI / UX Design', 'Shopify Development', 'WooCommerce Development', 'WordPress Development'].map(tech => (
             <div key={tech} className="glassmorphism" style={{
               padding: '12px 24px',
               borderRadius: '30px',
