@@ -13,7 +13,7 @@ const PORT = parseInt(process.env.PORT || '5000', 10);
 
 // Enable CORS with secure restrictions (Allowing frontend on localhost:3000)
 app.use(cors({
-  origin: ['http://127.0.0.1:3000', 'http://localhost:3000'],
+  origin: ['http://127.0.0.1:3000', 'http://localhost:3000', 'https://nech-tech.vercel.app'],
   credentials: true
 }));
 
@@ -379,6 +379,6 @@ app.get('/api/admin/resumes/:filename', authMiddleware, (req: Request, res: Resp
 });
 
 // Start listening
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`Server is running securely on http://127.0.0.1:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running securely on port ${PORT}`);
 });

@@ -171,7 +171,7 @@ const Home: React.FC = () => {
   const [clients, setClients] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/api/clients')
+    fetch((import.meta.env.VITE_API_URL || '') + '/api/clients')
       .then(res => res.json())
       .then(data => setClients(data))
       .catch(err => console.error(err));
@@ -395,7 +395,7 @@ const Services: React.FC = () => {
   const [services, setServices] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/api/services')
+    fetch((import.meta.env.VITE_API_URL || '') + '/api/services')
       .then(res => res.json())
       .then(data => setServices(data))
       .catch(err => console.error(err));
@@ -424,7 +424,7 @@ const Portfolio: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
 
   useEffect(() => {
-    fetch('/api/projects')
+    fetch((import.meta.env.VITE_API_URL || '') + '/api/projects')
       .then(res => res.json())
       .then(data => setProjects(data))
       .catch(err => console.error(err));
@@ -521,7 +521,7 @@ const Careers: React.FC = () => {
   const [msg, setMsg] = useState('');
 
   useEffect(() => {
-    fetch('/api/careers')
+    fetch((import.meta.env.VITE_API_URL || '') + '/api/careers')
       .then(res => res.json())
       .then(data => setJobs(data))
       .catch(err => console.error(err));
@@ -539,7 +539,7 @@ const Careers: React.FC = () => {
     data.append('resume', file);
 
     try {
-      const res = await fetch('/api/careers/apply', {
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/careers/apply', {
         method: 'POST',
         body: data
       });
@@ -695,7 +695,7 @@ const Blog: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/api/blog')
+    fetch((import.meta.env.VITE_API_URL || '') + '/api/blog')
       .then(res => res.json())
       .then(data => setPosts(data))
       .catch(err => console.error(err));
@@ -726,7 +726,7 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const endpoint = formState.type === 'Inquiry' ? '/api/contact' : '/api/quote-request';
+    const endpoint = formState.type === 'Inquiry' ? ((import.meta.env.VITE_API_URL || '') + '/api/contact') : ((import.meta.env.VITE_API_URL || '') + '/api/quote-request');
     const bodyData = formState.type === 'Inquiry' 
       ? { name: formState.name, email: formState.email, message: formState.message }
       : { name: formState.name, email: formState.email, company: formState.company, message: formState.message, bookingType: formState.type };
@@ -874,7 +874,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await fetch('/api/admin/analytics');
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/analytics');
       if (res.ok) {
         const data = await res.json();
         setAnalytics(data);
@@ -888,7 +888,7 @@ const AdminPanel: React.FC = () => {
 
   const checkAuth = async () => {
     try {
-      const res = await fetch('/api/admin/verify');
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/verify');
       if (res.ok) {
         setAuth(true);
         fetchAnalytics();
@@ -905,7 +905,7 @@ const AdminPanel: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/admin/login', {
+      const res = await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -924,14 +924,14 @@ const AdminPanel: React.FC = () => {
   };
 
   const handleLogout = async () => {
-    await fetch('/api/admin/logout', { method: 'POST' });
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/logout', { method: 'POST' });
     setAuth(false);
   };
 
   // CRUD triggers
   const addService = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/admin/services', {
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/services', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(serviceForm)
@@ -942,7 +942,7 @@ const AdminPanel: React.FC = () => {
 
   const addProject = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/admin/projects', {
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/projects', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(projectForm)
@@ -953,7 +953,7 @@ const AdminPanel: React.FC = () => {
 
   const addCareer = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/admin/careers', {
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/careers', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(careerForm)
@@ -964,7 +964,7 @@ const AdminPanel: React.FC = () => {
 
   const addBlog = async (e: React.FormEvent) => {
     e.preventDefault();
-    await fetch('/api/admin/blog', {
+    await fetch((import.meta.env.VITE_API_URL || '') + '/api/admin/blog', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(blogForm)
